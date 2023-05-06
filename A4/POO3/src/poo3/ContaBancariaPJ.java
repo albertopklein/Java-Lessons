@@ -15,6 +15,14 @@ public class ContaBancariaPJ extends ContaBancaria {
         super(titular,saldo);
         this.empresa = empresa;
     }
+
+    public String getEmpresa() {
+        return empresa;
+    }
+
+    public void setEmpresa(String empresa) {
+        this.empresa = empresa;
+    }
     
      @Override
     public String toString() {
