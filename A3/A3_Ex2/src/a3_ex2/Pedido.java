@@ -19,16 +19,13 @@ public class Pedido {
         this.stat = Status.AGUARDANDO_PAGAMENTO;
         this.Valor_Total = 0;
         this.Cliente = Cliente;
-//        for(int i = 0; i<10; i++){
-//            System.out.println(this.Itens[i]);
-//        }
     }
     public String getItens(){
         String aux = "";
         for(int i = 0; i < 10; i++){
             aux += this.Itens[i] + ";";
         }
-        return aux;
+        return aux.toUpperCase();
     }
     public void addItens(String Item, double valor) {
         if(Item != null && valor > 0){

@@ -10,20 +10,17 @@ package a3_ex1;
 public class Aluno {
     private String nome;
     private String matricula;
-    private double notas[];
+    private double[] notas = new double[3];
     private int nNotas;
     
     public Aluno(String nome,String matricula){
         this.nome = nome;
-        this.notas = new double[3];
         this.matricula = matricula;
         this.nNotas = 0;
-//        for(int i = 0; i < 3; i++){
-//            this.notas[i]= -1;
-//        }
+
     }
     
-    private double sumNotas(double nota){
+    private double sumNotasCheck(double nota){
         double aux = 0;
         for(int i = 0; i < nNotas; i++){
             aux += notas[i];
@@ -32,7 +29,7 @@ public class Aluno {
     }
     
     public void addNota(double nota){
-        if(nota >= 0 && nota <= 100 && nNotas < 3 && sumNotas(nota) < 100){
+        if(nota >= 0 && nota <= 100 && nNotas < 3 && sumNotasCheck(nota) < 100){
             this.notas[nNotas] = nota;
             this.nNotas++;
         }
@@ -63,25 +60,22 @@ public class Aluno {
     }
     
     public double getMinNota(){
-        if(notas[0] < notas[1] && notas[0] < notas[2]){
-            return notas[0];
+        double minNotas = notas[0];
+        for(int i = 1; i < notas.length; i++){
+            if(notas[i] < minNotas)
+                minNotas = notas[i];
         }
-        else if(notas[1] < notas[0] && notas[1] < notas[2]){
-            return notas[1];
-        }
-        else{
-            return notas[2];
-        }
+        System.out.println("MinNota= " + minNotas);
+        return minNotas;
     }
+    
     public double getMaxNota(){
-        if(notas[0] > notas[1] && notas[0] > notas[2]){
-            return notas[0];
+        double maxNotas = notas[0];
+        for(int i = 1; i < notas.length; i++){
+            if(notas[i] > maxNotas)
+                maxNotas = notas[i];
         }
-        else if(notas[1] > notas[0] && notas[1] > notas[2]){
-            return notas[1];
-        }
-        else{
-            return notas[2];
-        }
+        System.out.println("MaxNotas= " + maxNotas);
+        return maxNotas;
     }
 }
