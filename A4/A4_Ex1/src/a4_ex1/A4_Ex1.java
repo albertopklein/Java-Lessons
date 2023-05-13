@@ -25,7 +25,7 @@ public class A4_Ex1 {
         listFunc.add(new Funcionario("Fulano7", "Assinar Docs", "CEO"));
         listFunc.add(new Funcionario("Fulano8", "Assinar Docs", "CEO"));
         listFunc.add(new Funcionario("Fulano9", "Assinar Docs", "CEO"));
-        
+        listFunc.add(new Funcionario("Fulano10", "Assinar Docs", "CEO"));
         
         System.out.println(listFunc);
     

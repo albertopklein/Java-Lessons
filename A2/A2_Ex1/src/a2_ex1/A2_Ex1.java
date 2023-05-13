@@ -25,6 +25,20 @@ public class A2_Ex1 {
         
         System.out.println("O Jogador "+ jogador01.nome + " fez " + jogador01.getAssist() + " assistencias e fez " + jogador01.getGols() + " gols.");
         System.out.println("O Jogador "+ jogador02.nome + " fez " + jogador02.getAssist() + " assistencias e fez " + jogador02.getGols() + " gols.");
+        
+        int x = 10;
+        int y = 10;
+        System.out.println("inicial " + x);
+        x += x;
+        System.out.println("x+= x " + x);
+        x += y;
+        System.out.println("x += y " + x);
+        x /= y;
+        System.out.println("x/= y " + x);
+        ++x;
+        System.out.println("++x " + x);
+        x++;
+        System.out.println("x++" + x);
     }
     
 }
