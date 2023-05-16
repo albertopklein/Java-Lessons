@@ -25,14 +25,16 @@ public class A4_Ex2 {
 //        ContaBancaria conta = new ContaBancariaPJ("Fulano Jr.", 500, "TuCurso");
 //        
 //        System.out.println(conta);
-        Animal a1 = new Animal("Zalt", 1.2, 120);
-        System.out.println(a1);
+        //Animal a1 = new Animal("Zalt", 1.2, 120);
+        //System.out.println(a1);
         
         Animal a2 = new Humano("Zeca", 15, "Homosapiens", 1.6, 60);
         System.out.println(a2);
+        a2.Comunicar();
         
         Animal a3 = new Macaco("Safari Angola", "Orangotango", 1, 45);
         System.out.println(a3);
+        a3.Comunicar();
         
         Humano h1 = new Humano("Zeca2", 20, "Homosapiens", 1.8, 100);
         System.out.println(h1);

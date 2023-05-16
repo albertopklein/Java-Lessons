@@ -56,13 +56,16 @@ public class POO3 {
 //        
 //        System.out.println(listStr);
 //        
-        ContaBancaria contapf = new ContaBancaria("Fulano", 2500);
+        ContaBancaria contapf = new ContaBancariaPF("Fulano", 2500);
         
         System.out.println(contapf);
-
+        contapf.mostrarSaldo();
+        contapf.sacar(2400.00);
+        contapf.mostrarSaldo();
         ContaBancariaPJ contapj = new ContaBancariaPJ("Beltrano", 10000, "EuCurso");
         
         System.out.println(contapj);
+        contapj.mostrarSaldo();
         
         ContaBancaria conta = new ContaBancariaPJ("Fulano Jr.", 500, "TuCurso");
         

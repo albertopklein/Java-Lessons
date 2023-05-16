@@ -8,7 +8,7 @@ package a4_ex2;
  *
  * @author Alberto
  */
-public class Animal {
+public abstract class Animal {
     protected String species;
     protected double size;
     protected double weight;
@@ -48,5 +48,5 @@ public class Animal {
         return "Animal{" + "species=" + species + ", size=" + size + ", weight=" + weight + '}';
     }
     
-    
+    public abstract void Comunicar();
 }

@@ -8,7 +8,7 @@ package poo3;
  *
  * @author Alberto
  */
-public class ContaBancaria {
+public abstract class ContaBancaria {
     protected String titular;
     protected double saldo;
     
@@ -21,4 +21,8 @@ public class ContaBancaria {
     public String toString() {
         return "ContaBancaria{" + "titular=" + titular + ", saldo=" + saldo + '}';
     }
+    
+    public abstract void mostrarSaldo();
+    
+    public abstract double sacar(double valorSaque);
 }

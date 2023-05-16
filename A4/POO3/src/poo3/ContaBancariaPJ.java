@@ -28,4 +28,24 @@ public class ContaBancariaPJ extends ContaBancaria {
     public String toString() {
         return "ContaBancariaPJ[ [titular= " + super.titular + ", saldo= " + super.saldo + "empresa= " + empresa + ']';
     }
+
+    @Override
+    public void mostrarSaldo() {
+        System.out.println("Olá titular: " + super.titular + " Empresa: "+ empresa);
+        System.out.println("Saldo: "+ super.saldo);
+    }
+
+    @Override
+    public double sacar(double valorSaque) {
+        if(saldo - 20 >= valorSaque){
+            this.saldo -= (valorSaque + 20);
+            return valorSaque; 
+        }
+        else {
+            System.out.println("Saldo indisponível! Saldo atual é: " + this.saldo);
+            return 0;
+        }
+    }
+    
+    
 }

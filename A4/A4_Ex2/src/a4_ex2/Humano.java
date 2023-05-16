@@ -26,5 +26,10 @@ public class Humano extends Animal{
                 ", size= " + this.size +
                 ", weight= " + super.weight +'}';
     }
+
+    @Override
+    public void Comunicar() {
+        System.out.println("Olá mundo!");
+    }
     
 }

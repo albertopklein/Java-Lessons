@@ -24,5 +24,10 @@ public class Macaco extends Animal {
                 ", weight= " + super.weight +'}';
     }
 
+    @Override
+    public void Comunicar() {
+        System.out.println("Uh uh aha aha");
+    }
+
     
 }
