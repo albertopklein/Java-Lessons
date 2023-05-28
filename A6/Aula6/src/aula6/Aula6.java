@@ -6,9 +6,11 @@ package aula6;
  
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -50,6 +52,20 @@ public class Aula6 {
         // Não é possível criar listas a partir de Arrays.asList
         
         //SET é melhor pois confere se já existe o elemento na estrutura.
+        
+        Map<Integer, String> mapaUserName = new HashMap<>();
+        
+        mapaUserName.put(1,"Fulano");
+        mapaUserName.put(2, "Beltrano");
+        mapaUserName.put(5, "Ciclano");
+        //mapaUserName.remove(1); //pode passar um dos valores para remover
+        //mapaUserName.remove(5, "Ciclano"); // ou pode passar a chave completa, mas esta os dois valores precisam ser iguais para ocorrer a remoção dos valors do mapa
+        
+        List<String> nomes = new ArrayList<>(mapaUserName.values());
+        Set<Integer> chaves = mapaUserName.keySet();
+        System.out.println("Map: " + mapaUserName);
+        System.out.println("List names: " + nomes);
+        System.out.println("Set chaves: " + chaves);
     }
     
 }
