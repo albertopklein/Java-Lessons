@@ -100,7 +100,6 @@ public class Aula6_1 {
         System.out.println(timeAtualLD.format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss")));
         
         
-        
     }
     
 }
