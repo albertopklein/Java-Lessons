@@ -4,6 +4,7 @@
  */
 package lojabancodedados;
 
+import java.util.List;
 import lojabancodedados.model.Setor;
 import repository.SetorRepository;
 
@@ -27,6 +28,10 @@ public class Principal {
         setor = setorRepository.inserir(setor);
         System.out.println("Depois da inserção ");
         System.out.println(setor);
+    
+        List<Setor> setores = setorRepository.buscarTodos();
+        setores.forEach(System.out::println);
+        
     }
     
 }

@@ -66,6 +66,8 @@ public class Aula6 {
         System.out.println("Map: " + mapaUserName);
         System.out.println("List names: " + nomes);
         System.out.println("Set chaves: " + chaves);
+        
+        
+        
     }
-    
 }
