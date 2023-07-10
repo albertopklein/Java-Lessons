@@ -4,7 +4,6 @@
  */
 package repository;
 
-import repository.Conexao;
 import java.util.List;
 import lojabancodedados.model.Setor;
 import java.sql.*;
@@ -125,6 +124,30 @@ public class SetorRepository implements BancoDeDados<Setor> {
             System.out.println("Erro ao deletar setor: " + e.getMessage());
         } finally{
             Conexao.fechar();
+        }
+    }
+
+    @Override
+    public Setor atualizar(Setor setor) {
+        String sql = "UPDATE setor SET nome = ?, andar = ? where id = ? ";
+        Connection conexao = Conexao.obter();
+        
+        try {
+            PreparedStatement ps = conexao.prepareStatement(sql);
+            ps.setString(1, setor.getNome());
+            ps.setInt(2, setor.getAndar());
+            ps.setInt(3, setor.getId());
+                        
+            int sucesso = ps.executeUpdate();
+            if(sucesso > 0){
+                System.out.println("Nome do Setor atualizado com sucesso");
+            }
+            else System.out.println("Nao foi possível atualizar Nome de Setor");
+        } catch (SQLException e) {
+            System.out.println("Erro ao atualizar Setor: " + e.getMessage());
+        } finally{
+            Conexao.fechar();
+            return setor;
         }
     }
     

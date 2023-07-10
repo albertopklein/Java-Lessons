@@ -15,5 +15,6 @@ public interface BancoDeDados<T>{
     public List<T> buscarTodos();
     public T buscarPorID(int id);
     public void excluir(int id);
+    public T atualizar(T t);
     
 }

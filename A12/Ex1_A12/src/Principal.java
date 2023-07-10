@@ -50,6 +50,7 @@ public class Principal {
         }
         listaAlunos = alunosRepository.buscarTodos();
         System.out.println("Tamanho do BD: " + listaAlunos.size());
+        
     }
     
 }
