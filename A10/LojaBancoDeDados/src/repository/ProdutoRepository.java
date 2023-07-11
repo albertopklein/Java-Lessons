@@ -71,23 +71,25 @@ public class ProdutoRepository implements BancoDeDados<Produto>{
             System.out.println("=================");
             while(resultado.next()){
                 
-                Integer id = resultado.getInt("id");
+                int id = resultado.getInt("id");
                 String nome = resultado.getString("nome");
                 Long codigoDeBarras = resultado.getLong("codigoDeBarras");
                 Double valor = resultado.getDouble("valor");
-                Integer setor_id = resultado.getInt("setor_id");
-                Setor s1 = this.setorRepository.buscarPorID(setor_id);
-                System.out.println("ID: "+ id + " - nome: " + nome + " - codigo de barras: " + codigoDeBarras + " - valor: "+ valor + " setor = " + s1 );
+                int setor_id = resultado.getInt("setor_id");
+                
+                Setor s1 = this.setorRepository.buscarPorID(setor_id, false);
+                
+                //System.out.println("ID: "+ id + " - nome: " + nome + " - codigo de barras: " + codigoDeBarras + " - valor: "+ valor + " setor = " + s1 );
+                
                 Produto produto = new Produto(id, nome, codigoDeBarras, valor, s1);
+                
                 produtos.add(produto);
             }
-            
             //return produtos; // return list of produtos
         } catch (SQLException e){
             System.out.println("Erro ao buscar lista de produtos: " + e.getMessage());
             return null;
-        } finally{
-            
+        } finally{   
             Conexao.fechar();
         }
         return produtos;
@@ -103,7 +105,7 @@ public class ProdutoRepository implements BancoDeDados<Produto>{
             
             ResultSet resultado = ps.executeQuery();  
             
-           if(resultado.next()){
+           while(resultado.next()){
                
                 String nome = resultado.getString("nome");
                 Long codigoDeBarras = resultado.getLong("codigoDeBarras");
@@ -113,16 +115,15 @@ public class ProdutoRepository implements BancoDeDados<Produto>{
                 System.out.println("ID: "+ id + " - nome: " + nome + " - codigo de barras: " + codigoDeBarras + " - valor: "+ valor + " setor_id = " + s1 );
                 Produto p1 = new Produto(id, nome, codigoDeBarras, valor, s1);
                 return p1;
-            } else{
-               System.out.println("Problema ao remover Setor");
-               return null;
-           }
+            }
         } catch (SQLException e){
             System.out.println("Erro ao buscar Setor: " + e.getMessage());
             return null;
         } finally{
             Conexao.fechar();
         }
+        
+        return null;
     }
 
     @Override

@@ -15,13 +15,6 @@ public class Produto {
     private double valor;
     private Setor setor;
 
-    public Produto(String nome, long codigoDeBarras, double valor, Setor setor) {
-        this.nome = nome;
-        this.codigoDeBarras = codigoDeBarras;
-        this.valor = valor;
-        this.setor = setor;
-    }
-
     public Produto(Integer id, String nome, long codigoDeBarras, double valor, Setor setor) {
         this.id = id;
         this.nome = nome;
@@ -30,10 +23,6 @@ public class Produto {
         this.setor = setor;
     }
     
-    public Produto(){
-        
-    }
-
     public Integer getId() {
         return id;
     }

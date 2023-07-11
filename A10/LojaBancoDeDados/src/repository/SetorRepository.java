@@ -75,9 +75,13 @@ public class SetorRepository implements BancoDeDados<Setor> {
         }
         return setores;
     }
-
+    
     @Override
-    public Setor buscarPorID(int id) {
+    public Setor buscarPorID(int id){
+        return this.buscarPorID(id, true);
+    }
+        
+    public Setor buscarPorID(int id, boolean fechaConexao) {
         String sql = "SELECT * FROM setor where id = ?";
         Connection conexao = Conexao.obter();
         try{
@@ -86,24 +90,25 @@ public class SetorRepository implements BancoDeDados<Setor> {
             
             ResultSet resultado = ps.executeQuery();  
             
-           if(resultado.next()){
+           while(resultado.next()){
                
                 String nome = resultado.getString("nome");
                 Integer andarR = resultado.getInt("andar");
                 
-                System.out.println("ID: "+ id + " - nome: " + nome + " - andar: " + andarR);
-                Setor s1 = new Setor(id, nome, andarR);
-                return s1;
-            } else{
-               System.out.println("Problema ao remover Setor");
-               return null;
-           }
+                //System.out.println("ID: "+ id + " - nome: " + nome + " - andar: " + andarR);
+                
+                return new Setor(id, nome, andarR);
+            }
         } catch (SQLException e){
             System.out.println("Erro ao buscar Setor: " + e.getMessage());
             return null;
         } finally{
-            Conexao.fechar();
+            if(fechaConexao){
+                Conexao.fechar();
+            }
         }
+        
+        return null;
     }
 
     @Override
