@@ -14,7 +14,14 @@ public class Aula14 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Aluno aluno = new Aluno("Fulano", 1, "fulano@fulano.com", 0);
+        Aluno aluno2 = new Aluno("Fulano", 1, "fulano@fulano.com", 0);
+        
+        if(aluno.equals(aluno2)){
+            System.out.println("Igual!");
+        } else{
+            System.out.println("Diferente!");
+        }
     }
     
 }
